@@ -25,7 +25,7 @@ class ConductoresController extends Controller
      */
     public function create()
     {
-        return view('conductores.create');
+        //
     }
 
     /**

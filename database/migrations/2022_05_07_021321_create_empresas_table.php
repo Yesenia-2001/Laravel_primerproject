@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('nombrempresa');
             $table->char('direccion');
-            $table->integer('telefono');
+            $table->integer('telefono',100);
             $table->char('correo');
             $table->char('kit');
             $table->string('personacontac');

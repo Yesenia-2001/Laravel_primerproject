@@ -17,8 +17,8 @@ return new class extends Migration
             $table->id();
             $table->string('nombre');
             $table->string('apellido');
-            $table->string('telefono');
-            $table->varchar('direccion');
+            $table->integer('telefono',100);
+            $table->char('direccion');
             $table->integer('numpase');
 /*             $table->string('pase');
             $table->string('cedula');

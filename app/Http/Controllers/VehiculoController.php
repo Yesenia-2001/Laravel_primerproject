@@ -25,7 +25,7 @@ class VehiculoController extends Controller
      */
     public function create()
     {
-        return view('vehiculo.create');
+        //
     }
 
     /**
@@ -74,7 +74,8 @@ class VehiculoController extends Controller
      */
     public function edit($id)
     {
-        //
+        $vehiculo = Vehiculo::find($id);
+        return view('vehiculo.edit')->with('vehiculo',$vehiculo);
     }
 
     /**
@@ -86,7 +87,20 @@ class VehiculoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $vehiculo = Vehiculo::find($id);
+
+        $vehiculo->modelo = $request->get('modelo');
+        $vehiculo->matricula = $request->get('matricula');
+        $vehiculo->nombreconduc = $request->get('nombreconduc');
+        $vehiculo->año = $request->get('año');
+        $vehiculo->placa = $request->get('placa');
+        $vehiculo->documentoconduc = $request->get('documentoconduc');
+        $vehiculo->fechavencimiento = $request->get('fechavencimiento');
+
+
+        $vehiculo->save();
+
+        return redirect('/vehiculos');
     }
 
     /**
@@ -97,6 +111,8 @@ class VehiculoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $vehiculo= Vehiculo::find($id);
+        $vehiculo->delete();
+        return redirect('/vehiculos');
     }
 }

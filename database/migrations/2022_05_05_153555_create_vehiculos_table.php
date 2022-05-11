@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('nombreconduc');
             $table->integer('año');
             $table->varchar('placa');
-            $table->integer('documentoconduc');
+            $table->integer('documentoconduc',100);
             $table->date('fechavencimiento');
 /*             $table->file('tarjetapropiedad');
             $table->file('soat');
